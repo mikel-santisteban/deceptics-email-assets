@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Deceptics — Esto era una simulación</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    background: linear-gradient(180deg, #f6f8fb 0%, #eef0fc 100%);
+    color: #0f172a;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card {
+    max-width: 640px; width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(60, 79, 224, 0.12);
+    padding: 48px 40px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 32px;
+  }
+  .logo-mark {
+    width: 56px; height: 56px;
+    border-radius: 12px;
+    background-color: #3C4FE0;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-mark svg { width: 36px; height: 36px; }
+  .logo-text {
+    font-size: 22px; font-weight: 700;
+    letter-spacing: -0.02em; color: #0f172a;
+  }
+  .logo-tag {
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #94a3b8; margin-top: 2px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fef2f2; color: #991b1b;
+    border: 1px solid #fecaca;
+    border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 28px; font-weight: 700;
+    letter-spacing: -0.02em; color: #0f172a;
+    margin: 0 0 16px; line-height: 1.2;
+  }
+  .greeting {
+    font-size: 15px; color: #475569;
+    margin-bottom: 24px; line-height: 1.6;
+  }
+  .summary {
+    background: #eef0fc;
+    border-left: 3px solid #3C4FE0;
+    padding: 16px 20px; border-radius: 6px;
+    margin-bottom: 32px;
+    color: #1e293b; font-size: 14px; line-height: 1.6;
+  }
+  .summary strong { color: #0f172a; }
+  h2 {
+    font-size: 16px; font-weight: 600;
+    color: #0f172a; margin: 28px 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .signal-list { list-style: none; padding: 0; margin: 0; }
+  .signal-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f4f9;
+    font-size: 14px; color: #334155; line-height: 1.55;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .signal-list li:last-child { border-bottom: none; }
+  .signal-list .num {
+    flex-shrink: 0; width: 24px; height: 24px;
+    background: #3C4FE0; color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .signal-list strong { color: #0f172a; }
+  .footer {
+    margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid #f1f4f9;
+    font-size: 12px; color: #94a3b8; line-height: 1.55;
+  }
+  .footer strong { color: #475569; }
+  .footer a { color: #3C4FE0; text-decoration: none; }
+  @media (max-width: 600px) {
+    .card { padding: 32px 24px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#fff">
+          <polygon points="50,10 85,28 50,46 15,28" />
+          <polygon points="15,28 50,46 50,90 15,68" opacity="0.85" />
+          <polygon points="85,28 50,46 50,90 85,68" opacity="0.7" />
+        </g>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">Deceptics</div>
+      <div class="logo-tag">Awareness Training</div>
+    </div>
+  </div>
+
+  <div class="badge">⚠ Simulación de phishing</div>
+
+  <h1>Esto era un email de prueba.</h1>
+
+  <p class="greeting" data-greeting>
+    Hola, este correo formaba parte de una <strong>simulación de phishing</strong>
+    organizada por tu empresa para entrenar al equipo a reconocer ataques reales.
+    No te ha pasado nada — pero si fuera real, podrías haber comprometido datos.
+  </p>
+
+  <div class="summary">
+    <strong>Buenas noticias:</strong> identificar este intento te entrena el ojo.
+    Los ataques reales se parecen mucho a este. Repasar las señales hoy reduce
+    drásticamente la probabilidad de caer mañana.
+  </div>
+
+  <h2>Cómo identificarlo la próxima vez</h2>
+
+  <ul class="signal-list">
+    <li>
+      <span class="num">1</span>
+      <span><strong>Sentido de urgencia.</strong> "Tu cuenta caduca en 24h", "Acción requerida". El atacante quiere que decidas rápido, sin pensar.</span>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <span><strong>Remitente sospechoso.</strong> Mira la dirección entera, no solo el nombre. Los dominios suelen tener pequeñas variaciones (microsft.com, gooogle.com).</span>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <span><strong>Enlaces que no coinciden.</strong> Pasa el ratón sobre cualquier botón antes de hacer click. Si el destino no es el dominio oficial, sospecha.</span>
+    </li>
+    <li>
+      <span class="num">4</span>
+      <span><strong>Petición de información sensible.</strong> Bancos, IT y RRHH nunca van a pedir contraseñas, códigos de verificación o datos bancarios por email.</span>
+    </li>
+    <li>
+      <span class="num">5</span>
+      <span><strong>Errores sutiles.</strong> Faltas de ortografía, formato extraño, logos pixelados. Los atacantes copian, pero suelen dejar pistas.</span>
+    </li>
+  </ul>
+
+  <h2>Si recibes algo así de verdad</h2>
+
+  <p style="font-size: 14px; color: #475569; line-height: 1.6; margin: 0 0 12px;">
+    Reenvíalo al equipo de seguridad de tu empresa o usa el botón "Marcar como phishing" en tu cliente de correo. <strong>No hagas click. No respondas. No descargues archivos.</strong>
+  </p>
+
+  <div class="footer">
+    Este correo se envió como parte del programa de concienciación de tu organización.
+    <span data-template></span>
+    <br>Powered by <strong>Deceptics</strong> · <a href="https://deceptics.com">deceptics.com</a>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var name = params.get('n');
+    var tpl = params.get('t');
+    if (name) {
+      var safeName = name.replace(/[^a-zA-ZÀ-ÿ0-9\s\-']/g, '').trim().slice(0, 40);
+      if (safeName) {
+        var g = document.querySelector('[data-greeting]');
+        if (g) {
+          g.innerHTML = 'Hola ' + safeName + ', este correo formaba parte de una <strong>simulación de phishing</strong> organizada por tu empresa para entrenar al equipo a reconocer ataques reales. No te ha pasado nada — pero si fuera real, podrías haber comprometido datos.';
+        }
+      }
+    }
+    if (tpl) {
+      var safeTpl = tpl.replace(/[<>&"']/g, '').slice(0, 100);
+      if (safeTpl) {
+        var t = document.querySelector('[data-template]');
+        if (t) t.innerHTML = '<br>Plantilla simulada: <strong>' + safeTpl + '</strong>';
+      }
+    }
+  })();
+</script>
+</body>
+</html>

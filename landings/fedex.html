@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>FedEx · Reprogramar entrega</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f5f5f5;font-family:Arial,Helvetica,sans-serif;color:#333;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .box{background:#fff;width:100%;max-width:460px;padding:36px 32px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+  .logo{height:34px;margin-bottom:24px}
+  h1{font-weight:700;font-size:22px;margin:0 0 8px;color:#4D148C}
+  .sub{font-size:14px;color:#666;margin:0 0 24px;line-height:1.5}
+  label{display:block;font-size:13px;color:#333;margin:0 0 6px;font-weight:600}
+  input{width:100%;padding:12px 14px;font-size:15px;border:1px solid #c4c4c4;border-radius:3px;outline:none;font-family:inherit;margin-bottom:18px}
+  input:focus{border-color:#4D148C}
+  button{display:block;width:100%;background:#4D148C;color:#fff;border:none;padding:14px;font-size:15px;font-weight:700;border-radius:3px;cursor:pointer;font-family:inherit;margin-top:8px;text-transform:uppercase;letter-spacing:0.3px}
+  button:hover{background:#370e64}
+</style></head>
+<body>
+<div class="box">
+  <img class="logo" src="https://cdn.jsdelivr.net/gh/mikel-santisteban/deceptics-email-assets@main/fedex.png" alt="FedEx">
+  <h1>Reprograma tu entrega</h1>
+  <p class="sub">Tu paquete está retenido. Confirma los datos para programar la nueva entrega.</p>
+  <form action="https://amjshbgyuazrtxrokqwy.supabase.co/functions/v1/submit-credentials" method="POST">
+    <input type="hidden" name="token" id="token-field">
+    <label>Número de seguimiento</label>
+    <input type="text" name="tracking_number" placeholder="123456789012" required autofocus>
+    <label>Código postal de entrega</label>
+    <input type="text" name="postal_code" placeholder="48005" required>
+    <button type="submit">Programar nueva entrega</button>
+  </form>
+</div>
+<script>document.getElementById('token-field').value=new URLSearchParams(location.search).get('t')||'';</script>
+</body></html>
